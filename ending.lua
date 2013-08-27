@@ -1,6 +1,6 @@
 function ending(dt)
 	if outro_jouee == false then son_outro:play() outro_jouee = true end
-	dofile("ld27/init/fin.lua")
+	dofile("init/fin.lua")
 	
 	timer_frame = timer_frame+dt
 	if timer_frame > 0.1 then

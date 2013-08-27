@@ -5,7 +5,7 @@ if preums == true then level = 1 end
 nom_levels = {"Field trip","Sp(am)iral Nemesis","Prepare for trouble !...","... and make it double !","The light at the end of the tunnel"}
 
 function charger_level(level)
-	if level<6 then dofile("ld27/init/"..level..".lua") end
+	if level<6 then dofile("init/"..level..".lua") end
 end
 
 son_shoot = love.audio.newSource( "son/shoot.ogg", "static" )
@@ -18,12 +18,17 @@ son_outro = love.audio.newSource ( "son/outro.ogg", "static" )
 
 charger_level(level)
 
-fichier_sauvegarde = love.filesystem.newFile("save")
-fichier_sauvegarde:open('r')
+if not love.filesystem.exists("save") then
+	love.filesystem.write("save", "") 
+end
+
 record = {}
 for line in love.filesystem.lines("save") do
-	table.insert(record,line)
+	table.insert(record, line)
 end
+
+
+
 
 humiliation = {	
 				"And that sucks.",

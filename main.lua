@@ -1,8 +1,16 @@
+function dofile(filename)
+	local dothis = loadstring(love.filesystem.read(filename))
+	if dothis then
+		dothis()
+	end
+end
+	
+
 function love.load()
 	preums=true	intro_jouee = false outro_jouee = false
-	dofile("ld27/init.lua")
-	dofile("ld27/collisions.lua")
-	dofile("ld27/shoot.lua")
+	dofile("init.lua")
+	dofile("collisions.lua")
+	dofile("shoot.lua")
 end
 
 function love.keypressed(key)
@@ -10,7 +18,7 @@ function love.keypressed(key)
 	if gamestate == "menu" and cinematique_fin == false then
 		if key == "up" then debut = love.timer.getTime() gamestate = "game" end
 	elseif gamestate == "fin" and cinematique_fin == false then
-		if key == "up" then preums = false dofile("ld27/init.lua")  gamestate = "menu" end
+		if key == "up" then preums = false dofile("init.lua")  gamestate = "menu" end
 	end
 end
 
@@ -110,7 +118,7 @@ function love.draw()
 			
 		else -- Endgame !
 			cinematique_fin = true
-			dofile("ld27/ending.lua")
+			dofile("ending.lua")
 			ending(copie_dt)
 		end
 	elseif gamestate == "fin" then
