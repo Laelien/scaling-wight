@@ -75,6 +75,8 @@ miroir = 1
 offset = 0
 collision = false
 background = love.graphics.newImage("img/background.png")
+background_timer = love.graphics.newImage("img/timer/10.png")
+ecran_titre = love.graphics.newImage("img/ecran_titre.png")
 
 for i=1,5,1 do
 	table.insert(obstacles,{200*(i-1),0,200,5,poutre_fine,0})

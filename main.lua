@@ -98,8 +98,8 @@ function love.draw()
 	if gamestate == "menu" then
 		if level==1 then 
 			love.graphics.draw(background,offset_background[1],offset_background[2])
-			love.graphics.draw(love.graphics.newImage("img/timer/10.png"),0,0)	
-			love.graphics.draw(love.graphics.newImage("img/ecran_titre.png"),0,0)
+			love.graphics.draw(background_timer,0,0)	
+			love.graphics.draw(ecran_titre,0,0)
 			love.graphics.setFont(love.graphics.newFont(50)) 
 			love.graphics.setColor(0, 0, 0)
 			love.graphics.printf("Press Up to navigate menus or start level",0,375,800,"center")	
@@ -108,8 +108,8 @@ function love.draw()
 			
 		elseif level<6 then		
 			love.graphics.draw(background,offset_background[1],offset_background[2])
-			love.graphics.draw(love.graphics.newImage("img/timer/10.png"),0,0)	
-			love.graphics.draw(love.graphics.newImage("img/ecran_titre.png"),0,0)
+			love.graphics.draw(background_timer,0,0)	
+			love.graphics.draw(ecran_titre,0,0)
 			love.graphics.setFont(love.graphics.newFont(50)) 
 			love.graphics.setColor(0, 0, 0)
 			love.graphics.printf("LEVEL "..level,0,375,800,"center")
@@ -124,13 +124,13 @@ function love.draw()
 	elseif gamestate == "fin" then
 		love.graphics.draw(background,offset_background[1],offset_background[2])
 		if collision == true then
-			love.graphics.draw(love.graphics.newImage("img/explosion/8.png"),0,0)
+			love.graphics.draw(explosion[8],0,0)
 			love.graphics.setFont(love.graphics.newFont(50))	love.graphics.printf("GAME OVER",0,100,800,"center")
 			love.graphics.setFont(love.graphics.newFont(30))	love.graphics.printf("Your time is "..temps_survie.." seconds.",0,350,800,"center")
 			love.graphics.printf(humiliation_du_moment,0,400,800,"center")
 		else
 			love.graphics.draw(background,0,0)
-			love.graphics.draw(love.graphics.newImage("img/timer/10.png"),0,0)	
+			love.graphics.draw(background_timer,0,0)	
 			love.graphics.setFont(love.graphics.newFont(50))	love.graphics.printf("VICTORY !",0,100,800,"center")
 			love.graphics.setFont(love.graphics.newFont(30))	love.graphics.printf("Your time is "..temps_survie.." and you had "..carburant.." seconds of flight left.",0,300,800,"center")
 			love.graphics.printf("Your score is ".. temps_survie - carburant,0,375,800,"center")
