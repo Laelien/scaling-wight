@@ -16,6 +16,8 @@ function ending(dt)
 		love.graphics.printf("Hope you enjoyed !",0,425,800,"center")
 		love.graphics.draw(helico[frame],400,300,0)
 	else
+		son_explosion:setLooping(true)
+		son_explosion:play()
 		love.graphics.draw(background,0,0)
 		love.graphics.draw(love.graphics.newImage("img/timer/10.png"),0,0)	
 		love.graphics.setColor(0,0,0)

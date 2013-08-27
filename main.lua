@@ -113,7 +113,7 @@ function love.draw()
 			love.graphics.setFont(love.graphics.newFont(50)) 
 			love.graphics.setColor(0, 0, 0)
 			love.graphics.printf("LEVEL "..level,0,375,800,"center")
-			love.graphics.printf(nom_levels[level],0,525,800,"center")
+			love.graphics.printf(nom_levels[level],0,450,800,"center")
 			love.graphics.setColor(255, 255, 255)
 			
 		else -- Endgame !
