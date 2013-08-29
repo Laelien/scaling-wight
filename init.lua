@@ -2,6 +2,8 @@ gamestate = "menu"
 offset_background = {0,0}
 cinematique_fin = false
 if preums == true then level = 1 end
+police_50 = love.graphics.newFont(50)
+police_30 = love.graphics.newFont(30)
 nom_levels = {"Field trip","Sp(am)iral Nemesis","Prepare for trouble !...","... and make it double !","The light at the end of the tunnel"}
 
 function charger_level(level)
